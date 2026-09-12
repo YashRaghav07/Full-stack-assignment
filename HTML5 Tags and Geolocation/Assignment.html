@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="HTML5 Basic Web Page" />
+    <meta name="author" content="Your Name" />
+
+    <title>HTML5 Basic Website</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>My HTML5 Website</h1>
+
+      <!-- NAVIGATION -->
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!--  MAIN CONTENT  -->
+    <main id="home">
+      <!--  SECTION  -->
+      <section>
+        <h2>Welcome</h2>
+
+        <p>This is a basic HTML5 website using semantic HTML5 elements.</p>
+
+        <p>
+          HTML5 makes the structure of a webpage more meaningful and easier to
+          understand.
+        </p>
+      </section>
+
+      <!--  ARTICLE  -->
+      <section id="blog">
+        <article>
+          <header>
+            <h2>My First Blog</h2>
+
+            <p>
+              Published on
+              <time datetime="2026-09-12"> September 12, 2026 </time>
+            </p>
+          </header>
+
+          <p>
+            HTML5 provides semantic elements that describe the purpose of
+            different parts of a webpage.
+          </p>
+
+          <p>
+            Important information can be
+            <mark>highlighted</mark>.
+          </p>
+
+          <footer>
+            <p>Written by Your Name</p>
+          </footer>
+        </article>
+      </section>
+
+      <!--  ASIDE  -->
+      <aside>
+        <h2>Related Information</h2>
+
+        <p>This content is related to the main article.</p>
+      </aside>
+
+      <!--  FIGURE  -->
+      <section>
+        <figure>
+          <img src="image.jpg" alt="Example image" width="200" />
+
+          <figcaption>Figure 1: Example HTML5 image.</figcaption>
+        </figure>
+      </section>
+
+      <!--  PICTURE  -->
+      <section>
+        <h2>Responsive Image</h2>
+
+        <picture>
+          <source media="(max-width: 600px)" srcset="small.jpg" />
+
+          <source media="(min-width: 601px)" srcset="large.jpg" />
+
+          <img src="large.jpg" alt="Responsive example" width="300" />
+        </picture>
+      </section>
+
+      <!--  VIDEO -->
+      <section>
+        <h2>Video</h2>
+
+        <video controls width="500">
+          <source src="video.mp4" type="video/mp4" />
+
+          Your browser does not support video.
+        </video>
+      </section>
+
+      <!--  AUDIO  -->
+      <section>
+        <h2>Audio</h2>
+
+        <audio controls>
+          <source src="audio.mp3" type="audio/mpeg" />
+
+          Your browser does not support audio.
+        </audio>
+      </section>
+
+      <!--  PROGRESS  -->
+      <section>
+        <h2>Progress</h2>
+
+        <label for="progress"> Download progress: </label>
+
+        <progress id="progress" value="70" max="100">70%</progress>
+      </section>
+
+      <!--  METER  -->
+      <section>
+        <h2>Meter</h2>
+
+        <label for="storage"> Storage: </label>
+
+        <meter id="storage" value="7" min="0" max="10">70%</meter>
+      </section>
+
+      <!--  DATALIST -->
+      <section>
+        <h2>Datalist</h2>
+
+        <label for="browser"> Choose a browser: </label>
+
+        <input list="browsers" id="browser" name="browser" />
+
+        <datalist id="browsers">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Edge"></option>
+          <option value="Safari"></option>
+          <option value="Opera"></option>
+        </datalist>
+      </section>
+
+      <!--  DETAILS & SUMMARY  -->
+      <section>
+        <details>
+          <summary>What is HTML5?</summary>
+
+          <p>
+            HTML5 is the modern version of HTML used to structure web pages and
+            applications.
+          </p>
+        </details>
+      </section>
+
+      <!--  DIALOG  -->
+      <section>
+        <dialog open>
+          <h2>Hello!</h2>
+
+          <p>This is an HTML dialog element.</p>
+
+          <button>Close</button>
+        </dialog>
+      </section>
+
+      <!--  CANVAS  -->
+      <section>
+        <h2>Canvas</h2>
+
+        <canvas
+          id="myCanvas"
+          width="300"
+          height="150"
+          style="border: 1px solid black"
+        >
+        </canvas>
+      </section>
+
+      <!--  FORM  -->
+      <section id="contact">
+        <h2>Contact Form</h2>
+
+        <form>
+          <label for="name"> Name: </label>
+
+          <input type="text" id="name" name="name" />
+
+          <br /><br />
+
+          <label for="email"> Email: </label>
+
+          <input type="email" id="email" name="email" />
+
+          <br /><br />
+
+          <button type="submit">Submit</button>
+
+          <output> Form ready </output>
+        </form>
+      </section>
+    </main>
+
+    <!--USER LOCATION-->
+     <h1>User Location</h1>
+
+    <button onclick="getLocation()">
+        Get My Location
+    </button>
+
+    <p id="location">Location not available</p>
+    <p id="datetime">Date and time not available</p>
+
+    
+
+    <!--  FOOTER  -->
+    <footer>
+      <p>&copy; 2026 My HTML5 Website</p>
+
+      <nav>
+        <a href="#home">Back to Home</a>
+      </nav>
+    </footer>
+
+    <!--  JAVASCRIPT -->
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+
+      ctx.fillRect(50, 30, 200, 80);
+    </script>
+    <script>
+        function getLocation() {
+
+            // Get current date and time
+            const now = new Date();
+
+            document.getElementById("datetime").innerHTML =
+                "Date & Time: " + now.toLocaleString();
+
+            // Check Geolocation support
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+                    showPosition,
+                    showError
+                );
+
+            } else {
+                document.getElementById("location").innerHTML =
+                    "Geolocation is not supported by this browser.";
+            }
+        }
+
+
+        // Display location
+        function showPosition(position) {
+
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            document.getElementById("location").innerHTML =
+                "Latitude: " + latitude +
+                "<br>Longitude: " + longitude;
+        }
+
+
+        // Handle errors
+        function showError(error) {
+
+            if (error.code === 1) {
+                document.getElementById("location").innerHTML =
+                    "User denied the location request.";
+            }
+            else if (error.code === 2) {
+                document.getElementById("location").innerHTML =
+                    "Location information is unavailable.";
+            }
+            else if (error.code === 3) {
+                document.getElementById("location").innerHTML =
+                    "Location request timed out.";
+            }
+        }
+    </script>
+  </body>
+</html>
